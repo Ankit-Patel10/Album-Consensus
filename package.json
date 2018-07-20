@@ -1,0 +1,26 @@
+{
+  "name": "albumviews",
+  "version": "1.0.0",
+  "description": "Web application that allows you to view album ratings",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EulerLoop/AlbumViews.git"
+  },
+  "author": "Ankit Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EulerLoop/AlbumViews/issues"
+  },
+  "homepage": "https://github.com/EulerLoop/AlbumViews#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.2",
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "mongodb": "^3.1.1"
+  }
+}
