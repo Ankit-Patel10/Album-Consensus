@@ -24,10 +24,14 @@ app.post('/getscore', async function(req, res) {
     try {
         functions.findScore(req.body.album, score => {
             console.log(score);
+            var obj = {
+                albumscore: score
+            };
+            res.send(score);
         });
     }
-    catch {
-    
+    catch(err) {
+        
     }
 
 });
