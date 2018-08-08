@@ -6,7 +6,6 @@ const multer = require('multer');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(multer());
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
@@ -20,12 +19,11 @@ app.get('/functions.js', function(req, res) {
     res.sendFile(__dirname + '/functions.js');
 })
 
-app.post('/getscore', function(req, res) {
+app.post('/getscore', async function(req, res) {
     console.log('getting score');
-    console.log(req);
-    console.log('-----------------------')
-    console.log(req.body)
-    functions.findScore(req.data);
+    functions.findScore(req.body.album, score => {
+        console.log(score);
+    });
 
 });
 

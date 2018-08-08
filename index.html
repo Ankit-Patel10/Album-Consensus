@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <input type="text" placeholder="Search.." id="search">
+    <input type="text" name="search" id="search">
     <h1 id="area">What did Fantano rate</h1>
     <h2 id="debug1">AlbumName</h2>
     <h2 id="score">Score</h2>
@@ -17,14 +17,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
         function search() {
+            var x = $("search").val()
             console.log(document.getElementById("search").innerHTML);
             alert('hey');
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:8001/getscore',
                 data: {
-                    id: 'Rodeo',
-                    title: 'Rodeo'
+                    album: $("#search").val(),
                 },
                 dataType: "json",
                 success: function(data) {
