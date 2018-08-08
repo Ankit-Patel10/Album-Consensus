@@ -1,11 +1,7 @@
 const mongodb = require('mongodb'); 
 
-function showAlert(){
-    alert("This is an alert!");
-}
-
 function findScore(albumName) {
-	alert("FIND SCORE INVOKED");
+	console.log('findScore invoked');
     mongodb.MongoClient.connect('mongodb://admin:password1@ds143511.mlab.com:43511/spotifyviewer', async function(err, client) {
     if(err) {
         throw err;
@@ -16,9 +12,14 @@ function findScore(albumName) {
 			if (err) {
 				reject(err);
 			}
+			console.log(result.Score);
 			resolve(result.Score);
 		});
 	})
 	return results;
     });
 }
+
+module.exports = {
+	findScore
+};
