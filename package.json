@@ -1,5 +1,5 @@
 {
-  "name": "albumviews",
+  "name": "albumconsensus",
   "version": "1.0.0",
   "description": "Web application that allows you to view album ratings",
   "main": "server.js",
