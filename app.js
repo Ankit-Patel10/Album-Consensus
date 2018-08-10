@@ -20,13 +20,9 @@ app.get('/functions.js', function(req, res) {
 })
 
 app.post('/getscore', async function(req, res) {
-    console.log('getting score');
     try {
         functions.findScore(req.body.album, score => {
             console.log(score);
-            var obj = {
-                albumscore: score
-            };
             res.send(score);
         });
     }
