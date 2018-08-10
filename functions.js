@@ -11,7 +11,12 @@ function findScore(albumName, callback) {
 			if (err) {
 				reject(err);
 			}
+			if(result == undefined) {
+				resolve('Can\'t find album')
+			}
+			else {
 			resolve(result.Score);
+			}
 		});
 	})
 	callback(results);
