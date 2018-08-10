@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <head>
     <title>Spotify Visualizer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
+    
     <style>
         h1.title {
             margin-top: 50px;
@@ -23,15 +23,19 @@
             font-size:0;
         }
     </style>
+
 </head>
 
 <body>
     <div margin-top="10px">
-    <center>
+        <center>
             <h1 id="area" class="title">What did Fantano rate</h1>
-    <input type="text" name="search" id="search">
-    <h2 class="score" id="albumscore"></h2>
-    <button class="buttoninvisible" onclick="search()" id="searchbutton">Search</button>
+            <input type="text" name="search" id="search">
+            <h2 class="score" id="albumscore"></h2>
+            <button class="buttoninvisible" onclick="search()" id="searchbutton">Search</button>
+        </center>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
         var input = document.getElementById("search");
@@ -53,13 +57,28 @@
                 dataType: "json",
                 success: function(data) {
                     document.getElementById("albumscore").innerHTML = data;
-                    if(data == 8) {
+                    if(data == 1 || data == 2 || data == 3) {
                         changeBackground('red');
+                    }
+                    if(data == 4 || data == 5 || data == 6) {
+                        changeBackground('yellow');
+                    }
+                    if(data == 7 || data == 8 || data == 9) {
+                        changeBackground('green');
+                    }
+                    if(data == 10) {
+                        changeBackground('purple');
                     }
                 },
                 error: function(error) {
                     console.log(error.responseText);
                     document.getElementById("albumscore").innerHTML = error.responseText;
+                    if(error.responseText == 'Can\'t find album') {
+                        changeBackground('white');
+                    }
+                    if(error.responseText == 'NOT GOOD') {
+                        changeBackground('red');
+                    }
                 }
             });
         }
@@ -68,7 +87,8 @@
             document.body.style.background = color;
         }
     </script>
-    </center>
-</div>
 </body>
+
+
+
 </html>
