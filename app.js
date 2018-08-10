@@ -19,6 +19,14 @@ app.get('/functions.js', function(req, res) {
     res.sendFile(__dirname + '/functions.js');
 })
 
+app.get('/styles.css', function(req, res) {
+    res.sendFile(__dirname + '/styles.css');
+})
+
+app.get('/indexfunctions.js', function(req, res) {
+    res.sendFile(__dirname + '/indexfunctions.js');
+})
+
 app.post('/getscore', async function(req, res) {
     try {
         functions.findScore(req.body.album, score => {
