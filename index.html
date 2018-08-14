@@ -17,28 +17,29 @@
         <center>
             <script>
                 var ctx = document.getElementById('myChart').getContext('2d');
+                var fantanorating = document.getElementById('fantano')
                     var myChart = new Chart(ctx, {
                       type: 'bar',
                       data: {
                         labels: ['Fantano', 'Pitchfork', 'Public'],
                         datasets: [{
-                          data: [12, 19, 3]
+                          data: [0, 19, 3]
                         }]
                       }
                     });
             </script>
             <h1 id="area">What did Fantano rate</h1>
             <input type="text" name="search" id="search">
-            <h2 id="fantanoalbumscore"></h2>
-            <h2 id="pitchforkalbumscore"></h2>
-            <h2 id="metacriticalbumscore"></h2>
-            <h2 id="useralbumscore"></h2>
+            <h2 id="fantanoAlbumScore"></h2>
+            <h2 id="pitchforkAlbumScore"></h2>
+            <h2 id="metacriticAlbumScore"></h2>
+            <h2 id="userAlbumScore"></h2>
             <button onclick="search()" id="searchbutton">Search</button>
         </center>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="indexfunctions.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
     
        
 </body>

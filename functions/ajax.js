@@ -19,7 +19,7 @@ var input = document.getElementById("search");
                 dataType: "json",
                 success: function(data) {
                     console.log(data);
-                    document.getElementById("fantanoalbumscore").innerHTML = data;
+                    document.getElementById("fantanoAlbumScore").innerHTML = data;
                     if(data == 1 || data == 2 || data == 3) {
                         changeBackground('red');
                     }
@@ -35,7 +35,7 @@ var input = document.getElementById("search");
                 },
                 error: function(error) {
                     console.log(error.responseText);
-                    document.getElementById("fantanoalbumscore").innerHTML = error.responseText;
+                    document.getElementById("fantanoAlbumScore").innerHTML = error.responseText;
                     if(error.responseText == 'Can\'t find album') {
                         changeBackground('white');
                     }
@@ -54,11 +54,11 @@ var input = document.getElementById("search");
                 dataType: "json",
                 success: function(data) {
                     console.log(data.score);
-                    document.getElementById("pitchforkalbumscore").innerHTML = data.score;
+                    document.getElementById("pitchforkAlbumScore").innerHTML = data.score;
                 },
                 error: function(error) {
                     console.log(error.responseText);
-                    document.getElementById("pitchforkalbumscore").innerHTML = error.responseText;
+                    document.getElementById("pitchforkAlbumScore").innerHTML = error.responseText;
                     if(error.responseText == 'Can\'t find album') {
                         changeBackground('white');
                     }
@@ -79,12 +79,12 @@ var input = document.getElementById("search");
                 success: function(data) {
                     console.log(data.metaScore);
                 
-                    document.getElementById("metacriticalbumscore").innerHTML = data.metaScore;
-                    document.getElementById("useralbumscore").innerHTML = data.userScore
+                    document.getElementById("metacriticAlbumScore").innerHTML = data.metaScore;
+                    document.getElementById("userAlbumScore").innerHTML = data.userScore
                 },
                 error: function(error) {
                     console.log(error.responseText);
-                    document.getElementById("metacriticalbumscore").innerHTML = error.responseText;
+                    document.getElementById("metacriticAlbumScore").innerHTML = error.responseText;
                     if(error.responseText == 'Can\'t find album') {
                         changeBackground('white');
                     }

@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
-const functions = require('./functions/functions');
+const fantanoSearch = require('./functions/fantanoSearch');
 const bodyParser = require('body-parser');
-const multer = require('multer');
-const pitchforkfunctions = require('./functions/pitchforkfunctions');
-const metacriticfunctions = require('./functions/metacriticfunctions');
+const pitchfork = require('./functions/pitchfork');
+const metacritic = require('./functions/metacritic');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,21 +12,17 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/functions.js', function(req, res) {
-    res.sendFile(__dirname + '/functions/functions.js');
-})
-
 app.get('/styles.css', function(req, res) {
     res.sendFile(__dirname + '/styles/styles.css');
 })
 
-app.get('/indexfunctions.js', function(req, res) {
-    res.sendFile(__dirname + '/functions/indexfunctions.js');
+app.get('/ajax.js', function(req, res) {
+    res.sendFile(__dirname + '/functions/ajax.js');
 })
 
 app.post('/getfantanoscore', async function(req, res) {
     try {
-        functions.findScore(req.body.album, score => {
+        fantanoSearch.findScore(req.body.album, score => {
             console.log('fantano', score);
             res.send(score);
         });
@@ -41,26 +36,25 @@ app.post('/getfantanoscore', async function(req, res) {
 app.post('/getpitchforkscore', async function(req, res) {
     console.log('getting pitchforkscore');
     try {
-        pitchforkfunctions.pitchforksearch(req.body.album, score => {
+        pitchfork.pitchforksearch(req.body.album, score => {
             console.log('pitchfork', score);
             res.send({"score" : score });
         });
     }
-    catch {
+    catch(err) {
 
     }
 })
 
 app.post('/getmetacriticscore', async function(req, res) {
     try {
-        metacriticfunctions.metacriticSearch(req.body.album, score => {
+        metacritic.metacriticSearch(req.body.album, score => {
             console.log('metacritic', score);
             score.CriticRating /= 10;
             res.send({"metaScore": score.CriticRating, "userScore": score.UserRating })
         })
     }
-
-    catch {
+    catch(err){
 
     }
 });
