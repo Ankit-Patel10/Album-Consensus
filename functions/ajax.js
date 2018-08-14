@@ -20,18 +20,6 @@ var input = document.getElementById("search");
                 success: function(data) {
                     console.log(data);
                     document.getElementById("fantanoAlbumScore").innerHTML = data;
-                    if(data == 1 || data == 2 || data == 3) {
-                        changeBackground('red');
-                    }
-                    if(data == 4 || data == 5 || data == 6) {
-                        changeBackground('yellow');
-                    }
-                    if(data == 7 || data == 8 || data == 9) {
-                        changeBackground('green');
-                    }
-                    if(data == 10) {
-                        changeBackground('purple');
-                    }
                 },
                 error: function(error) {
                     console.log(error.responseText);
@@ -80,7 +68,8 @@ var input = document.getElementById("search");
                     console.log(data.metaScore);
                 
                     document.getElementById("metacriticAlbumScore").innerHTML = data.metaScore;
-                    document.getElementById("userAlbumScore").innerHTML = data.userScore
+                    document.getElementById("userAlbumScore").innerHTML = data.userScore;
+                    document.getElementById("update").click();
                 },
                 error: function(error) {
                     console.log(error.responseText);

@@ -12,32 +12,54 @@
 </head>
 
 <body>
-    </canvas><canvas id="myChart"></canvas>
+    <script>
+        function update() {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            ctx.update();
+            }
+        </script>
     <div margin-top="10px">
         <center>
-            <script>
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var fantanorating = document.getElementById('fantano')
-                    var myChart = new Chart(ctx, {
-                      type: 'bar',
-                      data: {
-                        labels: ['Fantano', 'Pitchfork', 'Public'],
-                        datasets: [{
-                          data: [0, 19, 3]
-                        }]
-                      }
-                    });
-            </script>
             <h1 id="area">What did Fantano rate</h1>
             <input type="text" name="search" id="search">
-            <h2 id="fantanoAlbumScore"></h2>
-            <h2 id="pitchforkAlbumScore"></h2>
-            <h2 id="metacriticAlbumScore"></h2>
-            <h2 id="userAlbumScore"></h2>
+            <h2 id="fantanoAlbumScore">1</h2>
+            <h2 id="pitchforkAlbumScore">1</h2>
+            <h2 id="metacriticAlbumScore">1</h2>
+            <h2 id="userAlbumScore">1</h2>
             <button onclick="search()" id="searchbutton">Search</button>
         </center>
     </div>
 
+</canvas><canvas id="myChart"></canvas>
+    <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var fantanoRating = document.getElementById('fantanoAlbumScore').innerHTML;
+            var pfRating = document.getElementById('pitchforkAlbumScore').innerHTML;
+            var metaRating = document.getElementById('metacriticAlbumScore').innerHTML;
+            var userRating = document.getElementById('userAlbumScore').innerHTML;
+                var myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['Fantano', 'Pitchfork', 'Critics', 'Public'],
+                    datasets: [{
+                      data: [fantanoRating, pfRating, metaRating, userRating]
+                    }]
+                  }
+                });
+        function update() {
+            var fantanoRating = document.getElementById('fantanoAlbumScore').innerHTML;
+            var pfRating = document.getElementById('pitchforkAlbumScore').innerHTML;
+            var metaRating = document.getElementById('metacriticAlbumScore').innerHTML;
+            var userRating = document.getElementById('userAlbumScore').innerHTML;
+            console.log(myChart.data.datasets[0].data);
+            myChart.data.datasets[0].data[0] = fantanoRating;
+            myChart.data.datasets[0].data[1] = pfRating;
+            myChart.data.datasets[0].data[2] = metaRating;
+            myChart.data.datasets[0].data[3] = userRating;
+           myChart.update();
+        }
+        </script>
+    <button id="update" onclick="update()"></button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="ajax.js"></script>
     
