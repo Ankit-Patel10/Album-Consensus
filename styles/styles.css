@@ -7,6 +7,7 @@ h1 {
     line-height: 26.4px;
     margin-top: 40px;
     margin-bottom: 40px;
+    color: #51AFC0;
 }
 
 h2 {
@@ -18,4 +19,10 @@ button {
     background: transparent;
     border: none !important;
     font-size:0;
+}
+
+input[type="text"]
+{
+    font-family: Raleway;
+    font-size: 18px;
 }

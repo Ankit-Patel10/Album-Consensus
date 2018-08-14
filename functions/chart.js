@@ -9,7 +9,7 @@ ctx.height = 300;
                   data: {
                     labels: ['Fantano', 'Pitchfork', 'Critics', 'Public'],
                     datasets: [{
-                        backgroundColor: "#ccffb3",
+                        backgroundColor: "#51AFC0",
                         label: "Ratings",
                         data: [fantanoRating, pfRating, metaRating, userRating]
                     }]

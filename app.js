@@ -24,6 +24,10 @@ app.get('/ajax.js', function(req, res) {
     res.sendFile(__dirname + '/functions/ajax.js');
 })
 
+app.get('/images/favicon.ico', function(req, res) {
+    res.sendFile(__dirname + '/images/favicon.ico')
+})
+
 app.post('/getfantanoscore', async function(req, res) {
     try {
         fantanoSearch.findScore(req.body.album, score => {
