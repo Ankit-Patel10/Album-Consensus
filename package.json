@@ -1,7 +1,7 @@
 {
   "name": "albumconsensus",
   "version": "1.0.0",
-  "description": "Web application that allows you to view album ratings",
+  "description": "Web application that allows you to view and compare album ratings",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EulerLoop/AlbumViews.git"
+    "url": "git+https://github.com/Ankit-Patel10/AlbumConsensus.git"
   },
   "author": "Ankit Patel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EulerLoop/AlbumViews/issues"
+    "url": "https://github.com/Ankit-Patel10/AlbumConsensus/issues"
   },
-  "homepage": "https://github.com/EulerLoop/AlbumViews#readme",
+  "homepage": "https://github.com/Ankit-Patel10/AlbumConsensus#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.2",
