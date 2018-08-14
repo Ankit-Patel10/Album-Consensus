@@ -1,5 +1,5 @@
 var ctx = document.getElementById('myChart').getContext('2d');
-ctx.height = 100;
+ctx.height = 300;
             var fantanoRating = document.getElementById('fantanoAlbumScore').innerHTML;
             var pfRating = document.getElementById('pitchforkAlbumScore').innerHTML;
             var metaRating = document.getElementById('metacriticAlbumScore').innerHTML;
@@ -15,6 +15,8 @@ ctx.height = 100;
                     }]
                   },
                   options: {
+                    responsive: true, 
+                    maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             ticks: {

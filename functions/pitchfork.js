@@ -7,7 +7,9 @@ function pitchforksearch(albumName, callback) {
             callback('Can\'t find album');
         }
         results.forEach(function(review, idx) {
-            if(review.attributes.album == albumName) {
+            var album = albumName.toLowerCase();
+            var reviewalbum = review.attributes.album.toLowerCase();
+            if(reviewalbum == album) {
                 callback(review.attributes.score);
             }
         })
