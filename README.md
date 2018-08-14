@@ -20,31 +20,24 @@ Node.js, npm, Browser
 
 ### Installing and Starting
 
-clone this repo
+###### Clone This Repo
 
 ```
 git clone https://github.com/Ankit-Patel10/Album-Consensus.git
 ```
 
-cd into project directory
-
-```
-cd Album-Consensus
-```
-
-install dependencies
+###### Install Dependencies
 
 ```
 npm install
 ```
 
-start the server by running
+###### Start Server
 
 ```
 npm start
 ```
-
-Try out the app by typing in the following into a browser
+###### Visit in browser
 
 ```
 localhost:8001
