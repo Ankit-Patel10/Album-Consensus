@@ -55,7 +55,6 @@ var input = document.getElementById("search");
                 success: function(data) {
                     console.log(data.score);
                     document.getElementById("pitchforkalbumscore").innerHTML = data.score;
-                   
                 },
                 error: function(error) {
                     console.log(error.responseText);
@@ -68,6 +67,34 @@ var input = document.getElementById("search");
                     }
                 }
             });
+
+            // Metacritic POST
+            $.ajax({
+                type: 'POST',
+                url: window.location.protocol + '//' + window.location.host + '/getmetacriticscore',
+                data: {
+                    album: $("#search").val(),
+                },
+                dataType: "json",
+                success: function(data) {
+                    console.log(data.metaScore);
+                
+                    document.getElementById("metacriticalbumscore").innerHTML = data.metaScore;
+                    document.getElementById("useralbumscore").innerHTML = data.userScore
+                },
+                error: function(error) {
+                    console.log(error.responseText);
+                    document.getElementById("metacriticalbumscore").innerHTML = error.responseText;
+                    if(error.responseText == 'Can\'t find album') {
+                        changeBackground('white');
+                    }
+                    if(error.responseText == 'NOT GOOD') {
+                        changeBackground('red');
+                    }
+                }
+            });
+
+
         }
 
         function changeBackground(color) {

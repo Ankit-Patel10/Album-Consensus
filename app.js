@@ -4,6 +4,7 @@ const functions = require('./functions/functions');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const pitchforkfunctions = require('./functions/pitchforkfunctions');
+const metacriticfunctions = require('./functions/metacriticfunctions');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +28,7 @@ app.get('/indexfunctions.js', function(req, res) {
 app.post('/getfantanoscore', async function(req, res) {
     try {
         functions.findScore(req.body.album, score => {
-            console.log(score);
+            console.log('fantano', score);
             res.send(score);
         });
     }
@@ -41,7 +42,7 @@ app.post('/getpitchforkscore', async function(req, res) {
     console.log('getting pitchforkscore');
     try {
         pitchforkfunctions.pitchforksearch(req.body.album, score => {
-            console.log(score);
+            console.log('pitchfork', score);
             res.send({"score" : score });
         });
     }
@@ -49,5 +50,19 @@ app.post('/getpitchforkscore', async function(req, res) {
 
     }
 })
+
+app.post('/getmetacriticscore', async function(req, res) {
+    try {
+        metacriticfunctions.metacriticSearch(req.body.album, score => {
+            console.log('metacritic', score);
+            score.CriticRating /= 10;
+            res.send({"metaScore": score.CriticRating, "userScore": score.UserRating })
+        })
+    }
+
+    catch {
+
+    }
+});
 
 module.exports = app;
