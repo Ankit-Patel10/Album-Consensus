@@ -16,6 +16,10 @@ app.get('/styles.css', function(req, res) {
     res.sendFile(__dirname + '/styles/styles.css');
 })
 
+app.get('/chart.js', function(req, res) {
+    res.sendFile(__dirname + '/functions/chart.js');
+})
+
 app.get('/ajax.js', function(req, res) {
     res.sendFile(__dirname + '/functions/ajax.js');
 })
