@@ -37,15 +37,28 @@
             var pfRating = document.getElementById('pitchforkAlbumScore').innerHTML;
             var metaRating = document.getElementById('metacriticAlbumScore').innerHTML;
             var userRating = document.getElementById('userAlbumScore').innerHTML;
-                var myChart = new Chart(ctx, {
+            var myChart = new Chart(ctx, {
                   type: 'bar',
                   data: {
                     labels: ['Fantano', 'Pitchfork', 'Critics', 'Public'],
                     datasets: [{
-                      data: [fantanoRating, pfRating, metaRating, userRating]
+                        backgroundColor: "#ccffb3",
+                        label: "Ratings",
+                        data: [fantanoRating, pfRating, metaRating, userRating]
                     }]
-                  }
-                });
+                  },
+                  options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                max: 10,
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            
         function update() {
             var fantanoRating = document.getElementById('fantanoAlbumScore').innerHTML;
             var pfRating = document.getElementById('pitchforkAlbumScore').innerHTML;

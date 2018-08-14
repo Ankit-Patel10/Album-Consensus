@@ -11,6 +11,9 @@ function metacriticGet(albumName, callback) {
 
 function metacriticSearch(albumName, callback) {
     metacriticGet(albumName, result => {
+        if(result == undefined ) {
+            result = 'Can\'t find album';
+        }
         callback(result)
     })
 }

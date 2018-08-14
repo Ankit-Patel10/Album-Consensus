@@ -20,6 +20,7 @@ var input = document.getElementById("search");
                 success: function(data) {
                     console.log(data);
                     document.getElementById("fantanoAlbumScore").innerHTML = data;
+                    document.getElementById("update").click();
                 },
                 error: function(error) {
                     console.log(error.responseText);
@@ -43,6 +44,7 @@ var input = document.getElementById("search");
                 success: function(data) {
                     console.log(data.score);
                     document.getElementById("pitchforkAlbumScore").innerHTML = data.score;
+                    document.getElementById("update").click();
                 },
                 error: function(error) {
                     console.log(error.responseText);
