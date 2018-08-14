@@ -1,5 +1,12 @@
 h1 {
-    margin-top: 50px;
+    font-family: Raleway;
+    font-size: 48px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 h2 {
