@@ -2,6 +2,8 @@
 ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
 
-# WhatDidFantanoRate
+# Album Consensus
 
-Web application that uses NodeJS and ExpressJS to display the Album review score given to a particular album by music reviewer, Anthony Fantano. 
+Web application that uses Node and Express to display and compare album reception across multiple media outlets. Media outlets include, Anthony Fantano, Pitchfork, and Metacritic. It also allows the comparison between these media outlets and the rating given by the public (user rating).
+
+Visit https://albumconsensus.herokuapp.com/ to use this application.
