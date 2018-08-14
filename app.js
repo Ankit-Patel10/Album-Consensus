@@ -28,6 +28,10 @@ app.get('/images/favicon.ico', function(req, res) {
     res.sendFile(__dirname + '/images/favicon.ico')
 })
 
+app.get('/images/github.png', function(req, res) {
+    res.sendFile(__dirname + '/images/github.png')
+})
+
 app.post('/getfantanoscore', async function(req, res) {
     try {
         fantanoSearch.findScore(req.body.album, score => {
