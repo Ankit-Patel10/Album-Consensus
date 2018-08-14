@@ -10,7 +10,7 @@ var input = document.getElementById("search");
             var x = $("search").val();
             $.ajax({
                 type: 'POST',
-                url: 'https://whatdidfantanorate.herokuapp.com/getscore',
+                url: window.location.protocol + '//' + window.location.host + '/getscore',
                 data: {
                     album: $("#search").val(),
                 },
