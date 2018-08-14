@@ -18,12 +18,10 @@ var input = document.getElementById("search");
                 },
                 dataType: "json",
                 success: function(data) {
-                    console.log(data);
                     document.getElementById("fantanoAlbumScore").innerHTML = data;
                     document.getElementById("update").click();
                 },
                 error: function(error) {
-                    console.log(error.responseText);
                     document.getElementById("fantanoAlbumScore").innerHTML = error.responseText;
                     if(error.responseText == 'Can\'t find album') {
                         changeBackground('white');
@@ -42,12 +40,10 @@ var input = document.getElementById("search");
                 },
                 dataType: "json",
                 success: function(data) {
-                    console.log(data.score);
                     document.getElementById("pitchforkAlbumScore").innerHTML = data.score;
                     document.getElementById("update").click();
                 },
                 error: function(error) {
-                    console.log(error.responseText);
                     document.getElementById("pitchforkAlbumScore").innerHTML = error.responseText;
                     if(error.responseText == 'Can\'t find album') {
                         changeBackground('white');
@@ -67,14 +63,11 @@ var input = document.getElementById("search");
                 },
                 dataType: "json",
                 success: function(data) {
-                    console.log(data.metaScore);
-                
                     document.getElementById("metacriticAlbumScore").innerHTML = data.metaScore;
                     document.getElementById("userAlbumScore").innerHTML = data.userScore;
                     document.getElementById("update").click();
                 },
                 error: function(error) {
-                    console.log(error.responseText);
                     document.getElementById("metacriticAlbumScore").innerHTML = error.responseText;
                     if(error.responseText == 'Can\'t find album') {
                         changeBackground('white');

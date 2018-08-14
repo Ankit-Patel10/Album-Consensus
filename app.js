@@ -27,7 +27,6 @@ app.get('/ajax.js', function(req, res) {
 app.post('/getfantanoscore', async function(req, res) {
     try {
         fantanoSearch.findScore(req.body.album, score => {
-            console.log('fantano', score);
             res.send(score);
         });
     }
@@ -38,10 +37,8 @@ app.post('/getfantanoscore', async function(req, res) {
 });
 
 app.post('/getpitchforkscore', async function(req, res) {
-    console.log('getting pitchforkscore');
     try {
         pitchfork.pitchforksearch(req.body.album, score => {
-            console.log('pitchfork', score);
             res.send({"score" : score });
         });
     }
@@ -53,7 +50,6 @@ app.post('/getpitchforkscore', async function(req, res) {
 app.post('/getmetacriticscore', async function(req, res) {
     try {
         metacritic.metacriticSearch(req.body.album, score => {
-            console.log('metacritic', score);
             score.CriticRating /= 10;
             res.send({"metaScore": score.CriticRating, "userScore": score.UserRating })
         })

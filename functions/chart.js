@@ -33,7 +33,6 @@ ctx.height = 300;
             var pfRating = document.getElementById('pitchforkAlbumScore').innerHTML;
             var metaRating = document.getElementById('metacriticAlbumScore').innerHTML;
             var userRating = document.getElementById('userAlbumScore').innerHTML;
-            console.log(myChart.data.datasets[0].data);
             myChart.data.datasets[0].data[0] = fantanoRating;
             myChart.data.datasets[0].data[1] = pfRating;
             myChart.data.datasets[0].data[2] = metaRating;
