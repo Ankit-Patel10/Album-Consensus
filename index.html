@@ -2,6 +2,7 @@
 <html>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <head>
     <title>Spotify Visualizer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -11,8 +12,21 @@
 </head>
 
 <body>
+    </canvas><canvas id="myChart"></canvas>
     <div margin-top="10px">
         <center>
+            <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                      type: 'bar',
+                      data: {
+                        labels: ['Fantano', 'Pitchfork', 'Public'],
+                        datasets: [{
+                          data: [12, 19, 3]
+                        }]
+                      }
+                    });
+            </script>
             <h1 id="area">What did Fantano rate</h1>
             <input type="text" name="search" id="search">
             <h2 id="fantanoalbumscore"></h2>

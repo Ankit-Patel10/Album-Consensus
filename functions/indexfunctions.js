@@ -55,18 +55,7 @@ var input = document.getElementById("search");
                 success: function(data) {
                     console.log(data.score);
                     document.getElementById("pitchforkalbumscore").innerHTML = data.score;
-                    if(data == 1 || data == 2 || data == 3) {
-                        changeBackground('red');
-                    }
-                    if(data == 4 || data == 5 || data == 6) {
-                        changeBackground('yellow');
-                    }
-                    if(data == 7 || data == 8 || data == 9) {
-                        changeBackground('green');
-                    }
-                    if(data == 10) {
-                        changeBackground('purple');
-                    }
+                   
                 },
                 error: function(error) {
                     console.log(error.responseText);
