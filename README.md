@@ -8,6 +8,8 @@ Web application that uses Node and Express to display and compare album receptio
 
 Visit https://albumconsensus.herokuapp.com/ to use this application.
 
+![albumconsensus](https://user-images.githubusercontent.com/28830657/45268438-574c5500-b44a-11e8-98ad-0d09958589c4.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
